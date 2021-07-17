@@ -4,6 +4,8 @@ require('../resources/db/connection')()
 
 const SecretModel = require('../resources/db/models/Secret')
 
+const draw = require('../utils/draw')
+
 module.exports.create = async (event, context) => {
   context.callbackWaitsForEmptyEventLoop = false
   const { name, email } = JSON.parse(event.body)
@@ -73,9 +75,51 @@ module.exports.get = async (event, context) => {
 module.exports.draw = async (event, context) => {
   context.callbackWaitsForEmptyEventLoop = false
 
-  try {
+  const { id: externalId } = event.pathParameters
+  const adminKey = event.headers['admin-key']
 
+  console.log(externalId)
+
+  try {
+    const secret = await SecretModel.findOne({
+      externalId,
+      adminKey,
+    }).select('participants ownerEmail').lean()
+
+    if (!secret) {
+      throw newError()
+    }
+
+    const drawResult = draw(secret.participants)
+    console.log(drawResult)
+    const drawMap = drawResult.map((result) => {
+      return {
+        giver: result.giver.externalId,
+        receiver: result.receiver.externalId,
+      }
+    })
+
+    await SecretModel.updateOne(
+      {
+        _id: secret._id,
+      },
+      {
+        drawResult: drawMap,
+      }
+    )
+
+    console.log(drawMap)
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        drawResult,
+        success: true,
+
+      })
+    }
   } catch (error) {
+    console.log(error)
     return {
       statusCode: 500,
       body:  JSON.stringify({
