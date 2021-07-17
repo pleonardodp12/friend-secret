@@ -1,8 +1,9 @@
+require('dotenv').config()
 const mongoose = require('mongoose')
 
 let connect = null
 
-const URI = process.env.URI
+const URI = process.env.DATABASE_URI
 
 module.exports = async () => {
   if (!connect) {

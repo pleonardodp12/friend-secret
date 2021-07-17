@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = {
   owner: String,
-  ownserEmail: String,
+  ownerEmail: String,
   adminKey: String,
   externalId: String,
   participants: [{
