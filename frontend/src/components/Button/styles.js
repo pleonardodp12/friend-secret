@@ -6,7 +6,7 @@ export const ButtonContainer = styled.button`
   width: 100%;
   max-width: 320px;
   font: 'Roboto', 500;
-  font-size: 24px;
+  font-size: 20px;
   background: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.light};
   padding: 0 32px;
