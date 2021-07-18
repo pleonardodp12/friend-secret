@@ -4,6 +4,7 @@ import arrowRight from '../public/img/arrow-right.svg'
 import logo from '../public/img/logo.png'
 import { Button } from '../src/components/Button'
 import { Input } from '../src/components/Input'
+import { Separator } from '../src/components/Separator'
 
 import { Container, ButtonToEnter, FormContainer } from '../src/styles/sharedComponents'
 
@@ -32,6 +33,7 @@ export default function HomePage () {
               name="email"
               placeholder="Digite aqui seu email"
             />
+            <Separator text="Crie e chame seus amigos" />
             <Button buttonText="Criar evento"/>
           </FormContainer>
         ) : (
