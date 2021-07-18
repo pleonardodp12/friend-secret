@@ -5,6 +5,7 @@ import logo from '../public/img/logo.png'
 import { Button } from '../src/components/Button'
 import { Input } from '../src/components/Input'
 import { Separator } from '../src/components/Separator'
+import { CardNavigation } from '../src/components/CardsNavigation'
 
 import { Container, ButtonToEnter, FormContainer } from '../src/styles/sharedComponents'
 
@@ -18,6 +19,7 @@ export default function HomePage () {
   return (
     <Container>
       <aside>
+        <CardNavigation />
         <h2>Faça um amigo oculto automático.</h2>
         <span>compartilhe com seus amigos e divirta-se!</span>
       </aside>

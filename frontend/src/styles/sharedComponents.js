@@ -8,11 +8,11 @@ export const Container = styled.div`
   aside {
     flex: 7;
     background: ${({ theme }) => theme.colors.primary};
-    h2 {
+    > h2 {
       color: ${({ theme }) => theme.colors.light};
       font-size: 36px;
     }
-    span {
+    > span {
       color: ${({ theme }) => theme.colors.primaryLight};
       font-size: 20px;
     }
