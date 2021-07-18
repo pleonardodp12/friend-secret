@@ -9,8 +9,13 @@ export const InputContainer = styled.div`
     height: 50px;
     border-radius: 8px;
     font-size: 18px;
+    margin: 4px 0;
     padding: 0 16px;
     background: ${({ theme }) => theme.colors.light};
     border: 1px solid ${({ theme }) => theme.colors.gray};
+    &:focus {
+      outline: none;
+      border: 2px solid ${({ theme }) => theme.colors.primary};
+    }
   }
 `
