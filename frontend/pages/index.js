@@ -16,6 +16,11 @@ export default function HomePage () {
     setShowForm(showForm => !showForm)
   }
 
+  const handleSubmit = async (e) => {
+    e.preventdefault()
+    
+  }
+
   return (
     <Container>
       <aside>
@@ -26,7 +31,7 @@ export default function HomePage () {
       <main>
         <Image src={logo} alt="Friend Secret" />
         {showForm ? (
-          <FormContainer>
+          <FormContainer onSubmit={handleSubmit}>
             <Input
               name="nome"
               placeholder="Digite aqui seu nome"
