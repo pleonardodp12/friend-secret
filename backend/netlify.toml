@@ -1,4 +1,6 @@
 [build]
-command='npm run build'
-functions='/src/handlers'
-publish='build'
+  functions = "src/handlers"
+[[redirect]]
+  from = "/backend/*"
+  to = /.netlify/src/handlers/:splat
+  status = 200
