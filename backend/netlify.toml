@@ -2,5 +2,5 @@
   functions = "/src/handlers"
 [[redirect]]
   from = "/backend/*"
-  to = /.netlify/src/handlers/:splat
+  to = "/.netlify/src/handlers/:splat"
   status = 200
