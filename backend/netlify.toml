@@ -1,5 +1,5 @@
 [build]
-  functions = "src/handlers"
+  functions = "/src/handlers"
 [[redirect]]
   from = "/backend/*"
   to = /.netlify/src/handlers/:splat
