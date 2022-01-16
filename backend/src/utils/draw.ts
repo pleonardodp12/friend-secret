@@ -1,6 +1,7 @@
-const shuffle = require('./shuffle')
+import { IParticipants } from '../resources/db/models/Secret'
+import { shuffle } from './shuffle'
 
-module.exports = (participants) => {
+export const draw = (participants: IParticipants[]) => {
   const result = []
   const shuffled = shuffle(participants)
   const total = shuffled.length

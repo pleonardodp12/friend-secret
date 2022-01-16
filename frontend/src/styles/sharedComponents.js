@@ -59,3 +59,30 @@ export const FormContainer = styled.form`
   width: 90%;
   margin-top: 36px;
 `
+
+export const MainContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: ${({ theme }) => theme.colors.primaryLight};
+  &:last-child() {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+`
+
+export const ContentMiddle = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  background-color: ${({ theme }) => theme.colors.primaryLight};
+  > h3 {
+    color: ${({ theme }) => theme.colors.dark }
+  }
+`
+
+export const ParticipantsList = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`

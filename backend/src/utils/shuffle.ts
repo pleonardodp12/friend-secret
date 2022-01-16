@@ -1,4 +1,6 @@
-module.exports = (array) => {
+import { IParticipants } from "../resources/db/models/Secret";
+
+export const shuffle = (array: IParticipants[]) => {
   let currentIndex = array.length;
   let temporaryValue;
   let randomIndex;
